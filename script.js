@@ -1,7 +1,6 @@
 class Convert {
     constructor() {
-        this.url = 'http://api.exchangeratesapi.io/v1/latest?';
-        this.apiKey = 'ccc57ef6f9aa2f4b6dd2f9a79df64055';
+        this.url = 'https://api.exchangerate.host/latest';
         this.currensyChoiceSale = document.querySelector('.sale__selected');
         this.currensyChoiceBuy = document.querySelector('.buy__selected');
         this.actionChoice = document.querySelector('.action-selected');
@@ -129,7 +128,7 @@ class Convert {
         let messageError = document.querySelector('.main__error');
         messageError.textContent = '';
 
-        fetch(this.url + `access_key=${this.apiKey}&base=${base}&symbols=${symbol}`)
+        fetch(this.url + `base=${base}&symbols=${symbol}`)
             .then(request => request.json())
             .then(data => {
                 // console.log(data.rates[symbol]);
