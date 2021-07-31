@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    padding: 10px 100px;
+    background-color: #F5F5F6;
+}
+
+.header__wrapper {
+    max-width: 1152px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    width: 89px;
+    height: 23px;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.central-wrapper {
+    max-width: 640px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.header__menu_text {
+    margin: 0 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #959BA4;
+}
+
+.header__menu_text:first-child {
+    margin-left: 0;
+}
+
+.header__menu_text:last-child {
+    margin-right: 0;
+}
+
+.header__button {
+    padding: 10px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+main {
+    margin: 50px auto;
+}
+
+.main__title {
+    margin: 0;
+    margin-bottom: 33px;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.main__error {
+    height: 15px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 10px;
+}
+
+.main__work-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.work-space__sale,
+.work-space__buy {
+    max-width: 260px
+}
+
+.sale__text,
+.buy__text {
+    font-size: 12px;
+    line-height: 14px;
+    color: #9F9F9F;
+    margin-bottom: 12px;
+}
+
+.sale__button,
+.buy__button {
+    width: 100%;
+    font-size: 12px;
+    line-height: 14px;
+    color: #C6C6C6;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.sale__button_currency,
+.buy__button_currency {
+    border: 1px solid #C6C6C6;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.sale__button_currency:first-child,
+.buy__button_currency:first-child,
+.selecting-currency-action__button:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.sale__button_currency:last-child,
+.buy__button_currency:last-child,
+.selecting-currency-action__button:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.sale__button_currency:hover,
+.buy__button_currency:hover,
+.selecting-currency-action__button:hover {
+    background-color: #833AE0;
+    color: white;
+}
+
+.sale__selected,
+.buy__selected,
+.action-selected {
+    background-color: #833AE0;
+    color: white;
+}
+
+.sale__input,
+.buy__input {
+    width: 100%;
+    margin: 0;
+    border: 1px solid #C6C6C6;
+    border-radius: 2px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.sale__input-field,
+.buy__input-field {
+    width: 100%;
+    resize: none;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+}
+
+
+/* Убрать стрелки в поле ввода суммы */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.sale__forex,
+.buy__forex {
+    font-size: 12px;
+    line-height: 14px;
+    color: #C6C6C6;
+}
+
+.main__selecting-currency-action {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    margin: 5px 0;
+    font-size: 12px;
+    line-height: 14px;
+    color: #C6C6C6;
+}
+
+.selecting-currency-action__button {
+    border: 1px solid #C6C6C6;
+    padding: 5px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+.preloader {
+    background-color: #833AE0;
+    display: none;
+}
+
+.preloader-img {
+    width: 23px;
+}

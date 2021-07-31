@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Конвертер валют</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <img src="images/logo.svg" alt="logo">
+            </div>
+            <div class="header__menu central-wrapper">
+                <div class="header__menu_text">Банк</div>
+                <div class="header__menu_text">Бизнес</div>
+                <div class="header__menu_text">Инвестиции</div>
+                <div class="header__menu_text">Страхование</div>
+                <div class="header__menu_text">Мобайл</div>
+                <div class="header__menu_text">Путешествия</div>
+                <div class="header__menu_text">Равлечения</div>
+            </div>
+            <div class="header__button">Войти</div>
+        </div>
+    </header>
+    <main class="central-wrapper">
+        <h1 class="main__title">Конвертер валют онлайн</h1>
+        <div class="main__selecting-currency-action">
+            <div class="selecting-currency-action__button action-selected" data-action="sale">Продажа</div>
+            <div class="selecting-currency-action__button" data-action="buy">Покупка</div>
+        </div>
+        <div class="main__error"></div>
+        <div class="main__work-space">
+            <div class="work-space__sale">
+                <p class="sale__text">У меня есть</p>
+                <div class="sale__button">
+                    <div class="sale__button_currency" data-currency="RUB">RUB</div>
+                    <div class="sale__button_currency" data-currency="USD">USD</div>
+                    <div class="sale__button_currency sale__selected" data-currency="EUR">EUR</div>
+                    <div class="sale__button_currency" data-currency="GBP">GBP</div>
+                    <div class="sale__button_currency preloader">
+                        <img class='preloader-img' src="images/preloader.svg" alt="loader">
+                    </div>
+                </div>
+                <div class="sale__input">
+                    <input type="number" name="sale" class="sale__input-field" step="0.0001" value=1>
+                    <div class="sale__forex">1 EUR = </div>
+                </div>
+            </div>
+            <div class="work-space__buy">
+                <p class="buy__text">Хочу приобрести</p>
+                <div class="buy__button">
+                    <div class="buy__button_currency" data-currency="RUB">RUB</div>
+                    <div class="buy__button_currency buy__selected" data-currency="USD">USD</div>
+                    <div class="buy__button_currency" data-currency="EUR">EUR</div>
+                    <div class="buy__button_currency" data-currency="GBP">GBP</div>
+                    <div class="buy__button_currency preloader">
+                        <img class='preloader-img' src="images/preloader.svg" alt="loader">
+                    </div>
+                </div>
+                <div class="buy__input">
+                    <input type="number" name="buy" class="buy__input-field" step="0.0001" value=1>
+                    <div class="buy__forex">1 USD = </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src='script.js'></script>
+</body>
+
+</html>
