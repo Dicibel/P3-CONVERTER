@@ -2,6 +2,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 header {
@@ -12,7 +13,6 @@ header {
 .header__wrapper {
     max-width: 1152px;
     margin: 0 auto;
-    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +32,6 @@ header {
 
 .central-wrapper {
     max-width: 640px;
-    box-sizing: border-box;
     padding: 10px;
 }
 
@@ -46,7 +45,7 @@ header {
     color: #959BA4;
 }
 
-.header__menu_text:first-child {
+.x_text:first-child {
     margin-left: 0;
 }
 
@@ -94,7 +93,7 @@ main {
 
 .work-space__sale,
 .work-space__buy {
-    max-width: 260px
+    max-width: 300px;
 }
 
 .sale__text,
@@ -123,7 +122,6 @@ main {
 .buy__button_currency {
     border: 1px solid #C6C6C6;
     padding: 8px 20px;
-    box-sizing: border-box;
     margin: 0;
 }
 
@@ -162,7 +160,6 @@ main {
     border: 1px solid #C6C6C6;
     border-radius: 2px;
     padding: 10px 15px;
-    box-sizing: border-box;
 }
 
 .sale__input-field,
@@ -208,7 +205,6 @@ input::-webkit-inner-spin-button {
 .selecting-currency-action__button {
     border: 1px solid #C6C6C6;
     padding: 5px;
-    box-sizing: border-box;
     text-transform: uppercase;
 }
 

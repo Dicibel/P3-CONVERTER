@@ -1,6 +1,6 @@
 class Convert {
     constructor() {
-        this.url = 'https://api.exchangerate.host/latest';
+        this.url = 'https://api.exchangerate.host/latest?';
         this.currensyChoiceSale = document.querySelector('.sale__selected');
         this.currensyChoiceBuy = document.querySelector('.buy__selected');
         this.actionChoice = document.querySelector('.action-selected');
@@ -15,6 +15,14 @@ class Convert {
         this.preloaderFieldBuy = document.querySelector('.buy__button_currency.preloader');
         this.isFieldSale = true;
         this.isCurrencySale = true;
+    }
+
+    init() {
+        this.setPreloader();
+        this.getExchangeRateFromServer(this.currensyChoiceSale.dataset.currency, this.currensyChoiceBuy.dataset.currency);
+        this.setEventListenerForSelectedCurrensy();
+        this.setEventListenerForSelectedAction();
+        this.setEventListenerForInput();
     }
 
     /**
@@ -189,14 +197,6 @@ class Convert {
             workSpace.append(workSpaceSale);
             saleText.textContent = 'Для покупки мне нужно';
         }
-    }
-
-    init() {
-        this.setPreloader();
-        this.getExchangeRateFromServer(this.currensyChoiceSale.dataset.currency, this.currensyChoiceBuy.dataset.currency);
-        this.setEventListenerForSelectedCurrensy();
-        this.setEventListenerForSelectedAction();
-        this.setEventListenerForInput();
     }
 }
 
