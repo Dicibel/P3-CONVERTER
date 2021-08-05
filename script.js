@@ -98,11 +98,11 @@ class Convert {
     setPreloader() {
         if (this.isFieldSale) {
             this.currensyChoiceSale.after(this.preloaderFieldSale);
-            this.preloaderFieldSale.style.display = 'block';
+            this.preloaderFieldSale.style.display = 'inline';
             this.currensyChoiceSale.style.display = 'none';
         } else {
             this.currensyChoiceBuy.after(this.preloaderFieldBuy);
-            this.preloaderFieldBuy.style.display = 'block';
+            this.preloaderFieldBuy.style.display = 'inline';
             this.currensyChoiceBuy.style.display = 'none';
         }
     }
@@ -113,10 +113,10 @@ class Convert {
     deletePreloader() {
         if (this.isFieldSale) {
             this.preloaderFieldSale.style.display = 'none';
-            this.currensyChoiceSale.style.display = 'block';
+            this.currensyChoiceSale.style.display = 'inline';
         } else {
             this.preloaderFieldBuy.style.display = 'none';
-            this.currensyChoiceBuy.style.display = 'block';
+            this.currensyChoiceBuy.style.display = 'inline';
         }
     }
 
@@ -171,13 +171,13 @@ class Convert {
     }
 
     /**
-     * Округление до 4 знаков после запятой
+     * Округление до 2 знаков после запятой
      * @param {*} number Числок, которое округляем
      * @returns Округленное число
      */
     roundNumber(number) {
         //сколько знаков после запятой нужно
-        let i = 4;
+        let i = 2;
         return Math.round(number * (10 ** i)) / (10 ** i)
     }
 

@@ -23,11 +23,12 @@ header {
     height: 23px;
 }
 
-.header__menu {
+.header__menu ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    list-style-type: none;
 }
 
 .central-wrapper {
@@ -109,7 +110,7 @@ main {
     width: 100%;
     font-size: 12px;
     line-height: 14px;
-    color: #C6C6C6;
+    color: #FFFFFF;
     cursor: pointer;
     display: flex;
     justify-content: flex-start;
@@ -123,6 +124,11 @@ main {
     border: 1px solid #C6C6C6;
     padding: 8px 20px;
     margin: 0;
+    background-color: #FFFFFF;
+}
+
+.selecting-currency-action__button {
+    background-color: #FFFFFF;
 }
 
 .sale__button_currency:first-child,
@@ -175,9 +181,6 @@ main {
     border: none;
     outline: none;
 }
-
-
-/* Убрать стрелки в поле ввода суммы */
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
