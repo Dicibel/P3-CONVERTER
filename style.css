@@ -161,7 +161,7 @@ main {
 
 .sale__input,
 .buy__input {
-    width: 100%;
+    width: 250px;
     margin: 0;
     border: 1px solid #C6C6C6;
     border-radius: 2px;
@@ -170,7 +170,7 @@ main {
 
 .sale__input-field,
 .buy__input-field {
-    width: 100%;
+    width: 250px;
     resize: none;
     font-weight: bold;
     font-size: 36px;

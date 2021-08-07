@@ -11,14 +11,11 @@ class Convert {
         this.forexSale = 0;
         this.forexBuy = 0;
         this.isSale = true;
-        this.preloaderFieldSale = document.querySelector('.sale__button_currency.preloader');
-        this.preloaderFieldBuy = document.querySelector('.buy__button_currency.preloader');
         this.isFieldSale = true;
         this.isCurrencySale = true;
     }
 
     init() {
-        this.setPreloader();
         this.getExchangeRateFromServer(this.currensyChoiceSale.dataset.currency, this.currensyChoiceBuy.dataset.currency);
         this.setEventListenerForSelectedCurrensy();
         this.setEventListenerForSelectedAction();
@@ -59,7 +56,6 @@ class Convert {
                 this.currensyChoiceSale.classList.add('sale__selected');
                 this.isFieldSale = true;
                 this.isCurrencySale = this.isSale ? this.isCurrencySale : !this.isCurrencySale;
-                this.setPreloader();
                 this.getExchangeRateFromServer(this.currensyChoiceSale.dataset.currency, this.currensyChoiceBuy.dataset.currency);
             })
         });
@@ -71,7 +67,6 @@ class Convert {
                 this.currensyChoiceBuy.classList.add('buy__selected');
                 this.isFieldSale = false;
                 this.isCurrencySale = this.isSale ? this.isCurrencySale : !this.isCurrencySale;
-                this.setPreloader();
                 this.getExchangeRateFromServer(this.currensyChoiceSale.dataset.currency, this.currensyChoiceBuy.dataset.currency);
             })
         });
@@ -92,33 +87,6 @@ class Convert {
         });
     }
 
-    /**
-     * Добавить Preloader
-     */
-    setPreloader() {
-        if (this.isFieldSale) {
-            this.currensyChoiceSale.after(this.preloaderFieldSale);
-            this.preloaderFieldSale.style.display = 'inline';
-            this.currensyChoiceSale.style.display = 'none';
-        } else {
-            this.currensyChoiceBuy.after(this.preloaderFieldBuy);
-            this.preloaderFieldBuy.style.display = 'inline';
-            this.currensyChoiceBuy.style.display = 'none';
-        }
-    }
-
-    /**
-     * Удалить Preloader
-     */
-    deletePreloader() {
-        if (this.isFieldSale) {
-            this.preloaderFieldSale.style.display = 'none';
-            this.currensyChoiceSale.style.display = 'inline';
-        } else {
-            this.preloaderFieldBuy.style.display = 'none';
-            this.currensyChoiceBuy.style.display = 'inline';
-        }
-    }
 
     /**
      * Запрос курса валюты на сервере
@@ -128,7 +96,6 @@ class Convert {
     getExchangeRateFromServer(base, symbol) {
         if (base === symbol) {
             this.forexSale = this.forexBuy = 1;
-            this.deletePreloader();
             this.updateInfo();
             return;
         }
@@ -140,7 +107,6 @@ class Convert {
             .then(request => request.json())
             .then(data => {
                 // console.log(data.rates[symbol]);
-                this.deletePreloader();
                 this.forexSale = data.rates[symbol];
                 this.forexBuy = 1 / this.forexSale;
                 this.updateInfo();
@@ -148,7 +114,6 @@ class Convert {
             .catch(error => {
                 messageError.textContent = 'Что-то пошло не так. Попробуйте ещё раз';
                 this.forexSale = this.forexBuy = 0;
-                this.deletePreloader();
                 this.updateInfo();
                 console.log(error);
             })
